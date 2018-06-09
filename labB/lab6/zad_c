@@ -1,0 +1,31 @@
+ #include <stdio.h>
+
+long najmnC( long k, long l, long j)
+{
+	if(k < l)
+		if(k < j)
+			return k;		
+		else
+			return j;		
+		
+	else
+		if(l < j)
+			return l;		
+		else
+			return j;			
+}
+
+long najmn( long k, long j, long l ); //rsi rdi rdx
+
+
+void main( void )
+{ 	
+	long j,k,l , wyn1, wyn2;
+	j=0;
+	k=1;
+	l=-1;
+	wyn1 = najmnC(k,j,l);
+	wyn2 = najmn(k,j,l);
+	printf("%ld, %ld", wyn1, wyn2);
+	
+}
