@@ -1,8 +1,8 @@
 #include<stdio.h>
 
-unsigned long chech_div(long a, long b, long c);
-
-
-void main(void){
-    printf("")
+unsigned long check_div(long a, long b, long c);
+ 
+void main(void)
+{
+    printf("%ld\n", check_div(8,2,8));   
 }
