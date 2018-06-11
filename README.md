@@ -2,6 +2,7 @@
 
 #we are assembler guru
 
+http://cs.lmu.edu/~ray/notes/gasexamples/
 
 # Spis treści
 
