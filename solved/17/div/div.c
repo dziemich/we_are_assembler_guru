@@ -3,8 +3,17 @@
 
 extern unsigned long check_div(long a, long b,long c);
 
-char *decimal_to_binary(long n)
-{
+char *decimal_to_binary(long n);
+
+int main(){
+    printf("%lu\n", check_div(4,2,0));
+    printf("%lu\n", check_div(4,3,0));
+    printf("%s\n", decimal_to_binary(check_div(4,3,1)));
+    printf("%s\n", decimal_to_binary(check_div(64,3,1)));
+  return 0;
+}
+
+char *decimal_to_binary(long n){
    long c, d, count;
    char *pointer;
 
@@ -28,12 +37,4 @@ char *decimal_to_binary(long n)
    *(pointer+count) = '\0';
 
    return  pointer;
-}
-
-int main(){
-    printf("%lu\n", check_div(4,2,0));
-    printf("%lu\n", check_div(4,3,0));
-    printf("%s\n", decimal_to_binary(check_div(4,3,1)));
-    printf("%s\n", decimal_to_binary(check_div(64,3,1)));
-  return 0;
 }

@@ -4,8 +4,17 @@
 
 extern unsigned int check_tab(int* tab, int n, int* max);
 
-char *decimal_to_binary(int n)
-{
+char *decimal_to_binary(int n);
+
+int main(){
+  int tab[10] = {1,2,3,3,3,4,4,6,7,7};
+  int max = 0;
+  unsigned int r = check_tab(tab,10,&max);
+  printf("Max: %d\n%s\n", max, decimal_to_binary(r));
+  return 0;
+}
+
+char *decimal_to_binary(int n){
    int c, d, count;
    char *pointer;
 
@@ -29,12 +38,4 @@ char *decimal_to_binary(int n)
    *(pointer+count) = '\0';
 
    return  pointer;
-}
-
-int main(){
-  int tab[10] = {1,2,3,3,3,4,4,6,7,7};
-  int max = 0;
-  unsigned int r = check_tab(tab,10,&max);
-  printf("Max: %d\n%s\n", max, decimal_to_binary(r));
-  return 0;
 }

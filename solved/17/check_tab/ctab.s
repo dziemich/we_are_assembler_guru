@@ -1,18 +1,17 @@
 .data
 
 tab:
-	.long 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-
+	.fill 64,4,0
 .type check_tab, @function
 
 .globl check_tab
 
 .text
 
-# int* tab		%rdi
-# int n			  %esi
-# int* max		%rdx
-# return 		  %eax
+# int* tab     %rdi
+# int  n       %esi
+# int* max     %rdx
+# return uint  %eax
 check_tab:
   MOVQ $0, %rax
 loop1:
@@ -36,18 +35,18 @@ loop2:
 next:
   MOVL $0, %ecx
   MOVL $0, %eax
-  MOVQ $64, %rbx
+  MOVQ $64, %r9
 loop3:
-  DEC %rbx
-  CMP $0, %rbx
+  DEC %r9
+  CMP $0, %r9
   JL end
   SHLL %eax
-  CMPL $0, tab(,%rbx,4)
+  CMPL $0, tab(,%r9,4)
   JE loop3
   ORL $1, %eax
-  CMPL %ecx, tab(,%rbx,4)
+  CMPL %ecx, tab(,%r9,4)
   JL loop3
-  MOVL tab(,%rbx,4), %ecx
+  MOVL tab(,%r9,4), %ecx
   JMP loop3
 end:
   MOVL %ecx, (%rdx)

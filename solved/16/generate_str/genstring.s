@@ -1,44 +1,34 @@
-.data
-
-# string:
-# 	.ascii ""
-iter:
-	.long 0
-
 .type generate_string, @function
 
 .globl generate_string
 
 .text
 
-# char * s		%rdi
-# char c			%esi
-# int n			%edx
-# int inc		%ecx
-# return 		%rax
+# char* s       %rdi
+# char c        %esi
+# int n         %edx
+# int inc       %ecx
+# return cahr*  %rax
 
 generate_string:
-	# XOR %rdi, %rdi # wyzeruj string
-	MOVL %esi, %eax
-	MOVQ %rdi, %rbx
+  MOVL %esi, %eax
+  MOVQ %rdi, %r9
+  MOVL $0, %r10d
 loop:
-	INCL 	iter
-	JMP chars_the_same
+  INCL  %r10d
+  JMP chars_the_same
 
 back:
-	CMP 	%edx, iter
-	JLE		loop
-	MOVB $0, (%rdi)
-	MOVQ	%rbx, %rax
-	ret
+  CMPL  %edx, %r10d
+  JL  loop
+  MOVB $0, (%rdi)
+  MOVQ  %r9, %rax
+  ret
 
 chars_the_same:
-	MOVB		%al, (%rdi)
-	INC 	%rdi
-	CMP		$0, %ecx
-	JE		back
-	ADDB  $1, %al
-	JMP		back
-
-# chars_incremented:
-# 	JMP 	back
+  MOVB  %al, (%rdi)
+  INCQ  %rdi
+  CMPL  $0, %ecx
+  JE  back
+  ADDB  $1, %al
+  JMP  back

@@ -7,11 +7,11 @@
 
 .text
 
-# char* buf		  %rdi
-# uint mask			%esi
-# int op			  %edx
-# int c		      %ecx
-# return char*		  %rax
+# char* buf     %rdi
+# uint mask     %esi
+# int op        %edx
+# int c         %ecx
+# return char*  %rax
 encode:
   MOVL %ecx, %r11d
   CMPL $0, %edx

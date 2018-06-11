@@ -3,15 +3,15 @@
 .globl check_div
 .text
 
-# long a		  %rdi
-# long b			%rsi
-# long c			%rdx
-# return 		  %rax
+# long a         %rdi
+# long b         %rsi
+# long c         %rdx
+# return ulong   %rax
 check_div:
   CMPQ $0, %rdx
   JNE other
   MOVQ %rdi, %rax
-  idivq %rsi
+  IDIVQ %rsi
   CMPQ $0, %rdx
   JNE nie_pod
   MOVQ $1, %rax
@@ -22,15 +22,15 @@ nie_pod:
 
 other:
   MOVQ $0, %rcx
-  MOVQ $64, %rbx
+  MOVQ $64, %r9
 loop:
-  CMPQ $0, %rbx
+  CMPQ $0, %r9
   JE end
-  shlq $1, %rcx
+  SHLQ $1, %rcx
   MOVQ $0, %rdx
   MOVQ %rdi, %rax
-  idivq %rbx
-  DECQ %rbx
+  IDIVQ %r9
+  DECQ %r9
   CMPQ $0, %rdx
   JNE loop
   or $1, %rcx
