@@ -6,7 +6,6 @@ mikro z 12.30 widzimy sie tutaj -> https://codeshare.io/G8ZopZ
 
 http://cs.lmu.edu/~ray/notes/gasexamples/
 
-# Spis treści
 
 ## DEBUGOWANIE W ASSEMBLERZE
 Można? No proste, że można, ale trzeba umieć xd
@@ -17,11 +16,14 @@ gcc -o -g out_file source_file.c source_file.s
 Dalej jest już bardzo prosto, odpalamy polecenie
 gdb out_file
 Przydatne polecenia w gdb:
-b -> ustawia breakpoint. Przykład: b <nazwa_etykiety>
-r -> odpalenie programu
-s -> step, przechodzimy po kolejnych linijkach
-p -> wypisanie zawartości rejestru. Przykład r $rax
+b -> ustawia breakpoint. Przykład: b nazwa_etykiety <br />
+r -> odpalenie programu <br />
+s -> step, przechodzimy po kolejnych linijkach <br />
+p -> wypisanie zawartości rejestru. Przykład r $rax <br />
 q -> wyjscie
+
+# Spis treści
+
 
 ## KONWENCJA 64 BIT TOC
 
