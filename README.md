@@ -12,7 +12,7 @@ Można? No proste, że można, ale trzeba umieć xd
 
 Jeżeli chcemy zdebugować program, potrzebujemy go skompilować z flagą -g.
 Polecenie wygląda mniej więcej tak: <br />
-gcc -o -g out_file source_file.c source_file.s </br />
+gcc -o -g out_file source_file.c source_file.s <br />
 Dalej jest już bardzo prosto, odpalamy polecenie <br />
 gdb out_file <br />
 Przydatne polecenia w gdb:
