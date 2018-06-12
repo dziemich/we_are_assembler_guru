@@ -2,7 +2,7 @@
 
 #we are assembler guru
 
-mikro z 12.30 widzimy sie tutaj -> https://codeshare.io/G8ZopZ 
+mikro z 12.30 widzimy sie tutaj -> https://codeshare.io/5w0EnP 
 
 http://cs.lmu.edu/~ray/notes/gasexamples/
 
@@ -20,7 +20,7 @@ b -> ustawia breakpoint. Przykład: b nazwa_etykiety <br />
 r -> odpalenie programu <br />
 s -> step, przechodzimy po kolejnych linijkach <br />
 p -> wypisanie zawartości rejestru. Przykład r $rax <br />
-q -> wyjscie
+q -> wyjscie <br />
 
 # Spis treści
 
