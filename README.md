@@ -2,6 +2,8 @@
 
 #we are assembler guru
 
+mikro z 12.30 widzimy sie tutaj -> https://codeshare.io/G8ZopZ 
+
 http://cs.lmu.edu/~ray/notes/gasexamples/
 
 # Spis treści

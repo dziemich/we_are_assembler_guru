@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-unsigned long check_div(long a, long b, long c);
+extern unsigned long check_div(long a, long b, long c);
  
 void main(void)
 {

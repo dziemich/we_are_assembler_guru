@@ -7,6 +7,8 @@
 
    # rejestry argumentow funkcji z C kolejno: rdi, rsi, rdx, rcx, r8, r9
 
+.text
+
 check_div:
     cmp $0, %rdx # sprawdzenie, czy c jest 0
     je a_divisible_by_b # jesli tak, dzielimy a przez b
