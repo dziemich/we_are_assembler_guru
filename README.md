@@ -8,6 +8,21 @@ http://cs.lmu.edu/~ray/notes/gasexamples/
 
 # Spis treści
 
+## DEBUGOWANIE W ASSEMBLERZE
+Można? No proste, że można, ale trzeba umieć xd
+
+Jeżeli chcemy zdebugować program, potrzebujemy go skompilować z flagą -g.
+Polecenie wygląda mniej więcej tak:
+gcc -o -g out_file source_file.c source_file.s
+Dalej jest już bardzo prosto, odpalamy polecenie
+gdb out_file
+Przydatne polecenia w gdb:
+b -> ustawia breakpoint. Przykład: b <nazwa_etykiety>
+r -> odpalenie programu
+s -> step, przechodzimy po kolejnych linijkach
+p -> wypisanie zawartości rejestru. Przykład r $rax
+q -> wyjscie
+
 ## KONWENCJA 64 BIT TOC
 
 - [Rejestry 64 bitowe i ich podział](#rejestry-64-bitowe-i-ich-podział)
